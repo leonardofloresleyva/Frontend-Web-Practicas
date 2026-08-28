@@ -1,24 +1,43 @@
+type EstadoPrestamo = 'activo' | 'vencido' | 'devuelto';
+
 interface Prestamo{
+    folio: string;
     multa: number;
     ejemplar: number;
+    estado: EstadoPrestamo;
+    socio?: string;
 }
 
-function calcularMulta(prestamo: Prestamo): number {
+function calcularMulta(prestamo: Prestamo){
     const cargoFijo = 50;
     return prestamo.multa + cargoFijo;
 }
 
-// const prestamo = { multa: '350', ejemplar: 14 };
+function reciboDe(prestamo: Prestamo): string {
+    if (prestamo.socio === undefined){
+        return `Recibo de socio no registrado`;
+    }
+    return `Recibo de ${prestamo.socio}`;
+}
 
-// console.log(calcularMulta(prestamo));
+const prestamo: Prestamo = { 
+    folio: "F001",
+    multa: 350, 
+    ejemplar: 14,
+    estado: 'vencido',
+    socio: "Juan Pérez"
+};
 
-const cargo = 50;
-cargo = 60;
+console.log(calcularMulta(prestamo));
+console.log(reciboDe(prestamo));
 
-let intentos = 0;
-intentos = 3;
-intentos = "3";
+// Error 1: Propiedades faltantes
+const prestamoDos = { folio: "F002", multa: 250, ejemplar: 15};
+calcularMulta(prestamoDos);
 
-const p = { multa: 350}
-p.multa = 400;
-p = { multa: 400};
+// Error 2: Estado inexistente o inválido
+prestamo.estado = 'caducado';
+
+// Error 3: Utilizar un objeto que no es Prestamo
+const pago = { cantidad: 10000, moneda: "dólar"};
+calcularMulta(pago);
