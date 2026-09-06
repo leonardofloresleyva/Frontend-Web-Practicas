@@ -1,0 +1,22 @@
+{
+  "name": "mostrador",
+  "version": "1.0.0",
+  "description": "Práctica 2 de Front-End Web: Temas Emergentes",
+  "author": "Leonardo Flores Leyva",
+  "scripts": {
+    "dev": "tsx src/main.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "start": "node dist/main.js"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "@types/prompts": "^2.4.9",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "prompts": "^2.4.2"
+  },
+  "type": "module"
+}

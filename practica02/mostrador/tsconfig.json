@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", // a qué versión de JS se compila
+    "module": "NodeNext", // sistema de módulos (import/export)
+    "moduleResolution": "NodeNext",
+    "outDir": "dist", // dónde se escribe el .js
+    "rootDir": "src", // dónde vive el .ts
+    "strict": true, // ⬅ el interruptor más importante
+
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "noUncheckedIndexedAccess": true,
+
+    "esModuleInterop": true, // compatibilidad con paquetes CommonJS
+    "skipLibCheck": true, // no revisar los .d.ts de node_modules
+    "types": ["node"]
+  },
+  "include": ["src/**/*"]
+}
