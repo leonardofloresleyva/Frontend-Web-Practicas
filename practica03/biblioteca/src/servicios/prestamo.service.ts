@@ -40,7 +40,7 @@ export class PrestamoService {
     const choque = dto.ejemplares.find(e => fuera.includes(e));
     if (choque !== undefined) {
       throw new EjemplarPrestadoError(choque);
-    };
+    }
 
     const prestamo: Prestamo = {
       folio: nuevoFolio(),
@@ -51,7 +51,8 @@ export class PrestamoService {
       estado: "activo",
       costoReposicion: 350,
     };
-    return prestamo;
+
+    return this.repository.save(prestamo);
   }
   // TODO 4.3: metodo listarPorLibro()
   async listarPorLibro(libroId: string): Promise<Prestamo[]> {
