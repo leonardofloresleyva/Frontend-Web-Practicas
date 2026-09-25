@@ -10,7 +10,7 @@
 
 ### **Paso 3: ¿Qué error apareció al cambiar a la interfaz, y por qué la clase sí se había resuelto sola?**
 
-#### Apareció el error UnknownDependenciesException, que explica que NestJS no puede resolver la dependencia del constructor de InscripcionesService (no puede  instanciar el repositorio); la clase sí se puedo resolver sola ya que cuenta con el decorador "Injectable()", que le indica a NestJS que puede inyectarse  como una dependencia al incluirse como un provider en el módulo.
+#### Apareció el error UnknownDependenciesException, que explica que NestJS no puede resolver la dependencia del constructor de InscripcionesService (no puede  instanciar el repositorio); la clase sí se pudo resolver sola ya que cuenta con el decorador "Injectable()", que le indica a NestJS que puede inyectarse  como una dependencia al incluirse como un provider en el módulo.
 
 ### **Paso 4: ¿Por qué el servicio necesita un token para el repositorio, pero el controlador no lo necesita para el servicio?**
 
