@@ -1,15 +1,31 @@
-### Practica 6 - Inscripciones al gimnasio (SOLUCION)
-###
-### COMO SE USA:
-###   1. Extension "REST Client" (humao.rest-client) en VS Code.
-###   2. npm run start:dev
-###   3. Clic en "Send Request" arriba de cada peticion.
-###
-### OJO: el orden importa. El horario 1 tiene cupoMaximo = 2, asi que las
-### peticiones 1, 2 y 3 hay que correrlas EN ORDEN para ver el 409.
-### Todo vive en memoria: si reinicias el servidor, vuelve a cero.
-
+### Práctica 7 - Miembros del gimnasio
 @host = http://localhost:3000
+
+### 1. Prueba de método listar() -> 200
+GET {{host}}/miembros
+
+### 2. Prueba de método buscar() -> 200
+GET {{host}}/miembros/1
+
+### 3. Prueba de método crear() -> 201
+POST {{host}}/miembros
+Content-Type: application/json
+
+{"nombre": "Michael Jackson", "correo": "mjackson@gmail.com", "membresia": "premium"}
+
+### 4. Prueba de método actualizar() -> 200
+PATCH {{host}}/miembros/2
+Content-Type: application/json
+
+{"nombre": "Michael De Santa", "correo": "michaellovestrevor@lifeinvader.com"}
+
+### 5. Prueba de método eliminar() -> 200
+DELETE {{host}}/miembros/3
+
+### EXTRA: Se verifica el cambio de estado de Sofía (miembro con id = 3)
+GET {{host}}/miembros
+
+### Practica 6 - Inscripciones al gimnasio (SOLUCION)
 
 ### 1. Primera inscripcion  ->  201 + header Location
 POST {{host}}/inscripciones

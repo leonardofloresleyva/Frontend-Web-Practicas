@@ -3,7 +3,7 @@ import { InscripcionesService } from './inscripciones.service';
 import { aInscripcionDto } from './dto/inscripcion-respuesta.dto';
 import type { CrearInscripcionDto } from './dto/crear-inscripcion.dto';
 import type { Response } from 'express';
-import { HorarioNoEncontradoError, MiembroNoEncontradoError, InscripcionDuplicadaError, CupoLlenoError } from './dominio/errores';
+import { HorarioNoEncontradoError, MiembroNoEncontradoError, InscripcionDuplicadaError, CupoLlenoError } from '../dominio/errores';
 
 @Controller('inscripciones')
 export class InscripcionesController {

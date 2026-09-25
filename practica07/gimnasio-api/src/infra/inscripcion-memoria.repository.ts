@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { HORARIOS, MIEMBROS } from '../../datos/gimnasio.seed';
+import { HORARIOS, MIEMBROS } from '../datos/gimnasio.seed';
 import { Inscripcion, NuevaInscripcion } from '../dominio/entidades';
 import { InscripcionRepository } from '../dominio/inscripcion.repository';
 
