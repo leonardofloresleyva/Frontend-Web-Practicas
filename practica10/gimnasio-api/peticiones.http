@@ -258,7 +258,8 @@ Content-Type: application/json
 
 { "correo": "karla@itson.mx", "password": "gimnasio2026" }
 
-@tokenKarla = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNvcnJlbyI6ImthcmxhQGl0c29uLm14Iiwicm9sIjoibWllbWJybyIsIm1pZW1icm9JZCI6MSwiaWF0IjoxNzkxNTQ0NzE3LCJleHAiOjE3OTE1NDgzMTd9.qGqjhTh33RS-Lx7MbfB-0zgzqo_s60EkxzU-XR57mxs
+###
+@tokenKarla = {{loginKarla.response.body.data.access_token}}
 
 
 ### 40. Lo que viaja dentro del token  ->  200
@@ -300,3 +301,27 @@ POST {{host}}/auth/login
 Content-Type: application/json
 
 { "correo": "omar@itson.mx", "password": "gimnasio2026"}
+
+### 46. Se intenta cancelar la inscripción sin token
+DELETE  {{host}}/inscripciones/1
+Content-Type: application/json
+
+### 47. Se intenta cancelar la inscripción con token de miembro
+DELETE  {{host}}/inscripciones/1
+Content-Type: application/json
+Authorization: Bearer {{tokenKarla}}
+
+### 48.Se inicia sesión con credenciales de entrenador
+# @name loginAna
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{ "correo": "ana@itson.mx", "password": "gimnasio2026" }
+
+###
+@tokenAna = {{loginAna.response.body.data.access_token}}
+
+### 49 Se cancela la inscripción con token de entrenador
+DELETE  {{host}}/inscripciones/5
+Content-Type: application/json
+Authorization: Bearer {{tokenAna}}

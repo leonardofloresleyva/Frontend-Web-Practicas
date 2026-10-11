@@ -11,6 +11,7 @@ import { ES_PUBLICO } from '../decoradores/publico.decorator';
 // Nosotros solo le agregamos la excepcion de @Publico().
 @Injectable()
 export class JwtAuthGuard extends AuthGuard('jwt') {
+  
   constructor(private readonly reflector: Reflector) {
     super();
   }
