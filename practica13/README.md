@@ -7,4 +7,4 @@
 #### El contador del carrito crece hasta el infinito.
 
 ### **Paso 3: ¿Por qué con carrito.push(...) el contador no se mueve y no sale ningún error?**
-#### 
+#### Porque react no detecta cambios del estado del arreglo y no pinta de nuevo la página.
