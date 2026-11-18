@@ -9,6 +9,5 @@ import { Catalogo } from '../../servicios/catalogo';
 })
 export class FiltroCategoria {
   protected readonly catalogo = inject(Catalogo);
-
   protected readonly opciones = ['todas' as const, ...CATEGORIAS];
 }
